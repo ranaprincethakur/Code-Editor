@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import CodeEditorWindow from "./components/CodeEditorWindow";
+import Navbar from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [language, setLanguage] = useState("html");
+  const [theme, setTheme] = useState("vs-dark");
+
+  //onChange for language select
+  const handleLanguage = (value) => {
+    setLanguage(value);
+    console.log(value);
+  };
+
+  //onChange for theme select
+  const handleTheme = (value) => {
+    setTheme(value);
+    console.log(value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar handleLanguage={handleLanguage} handleTheme={handleTheme} />
+      <CodeEditorWindow language={language} theme={theme} />
+      <ToastContainer />
     </div>
   );
 }
