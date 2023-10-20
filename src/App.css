@@ -9,7 +9,7 @@
 .navbar{
   height: 9vh;
   background-color:#2c3838;
-  color: white;
+  color: rgb(214, 50, 50);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,9 +28,15 @@
   background-color: #2c3838;
   height: 91vh;
 }
-/* .editor-area{
-  margin-top: 30px;
-} */
-.buttons-area{
 
+.buttons-area{
+margin-top: 15px;
+}
+.buttons-area button{
+  margin-left: 25px;
+  width: 90px;
+  height: 25px;
+  border-radius: 3px;
+  background-color: rgb(118, 110, 124);
+  
 }
